@@ -31,7 +31,7 @@ describe('NumberTransformerService', () => {
       expect(response).toEqual(mockResponse);
     });
 
-    const req = httpMock.expectOne(`http://localhost:8081/api/v1/transform/${number}`);
+    const req = httpMock.expectOne(`http://localhost:8080/api/v1/transform/${number}`);
     expect(req.request.method).toBe('GET');
     req.flush(mockResponse);
   });
