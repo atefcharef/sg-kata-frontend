@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { NumberTransformerService } from '../number-transformer.service';
+import { NumberTransformerService } from '../core/number-transformer.service';
 import {catchError, of, tap} from "rxjs";
 
 @Component({

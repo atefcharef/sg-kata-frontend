@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class NumberTransformerService {
 
-  private apiUrl = 'http://localhost:8080/api/v1/transform';
+  private apiUrl = 'http://localhost:8081/api/v1/transform';
 
   constructor(private http: HttpClient) { }
 

@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModalFormComponent } from './modal-form.component';
-import { NumberTransformerService } from '../number-transformer.service';
+import { NumberTransformerService } from '../core/number-transformer.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { of } from 'rxjs';
 
