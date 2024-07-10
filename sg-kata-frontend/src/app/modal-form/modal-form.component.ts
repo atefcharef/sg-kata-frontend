@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { NumberTransformerService } from '../number-transformer.service';
+import {catchError, of, tap} from "rxjs";
 
 @Component({
   selector: 'app-modal-form',
@@ -29,15 +30,16 @@ export class ModalFormComponent {
   onSubmit() {
     if (this.form.valid) {
       const number = this.form.value.number;
-      this.numberTransformerService.transformNumber(number).subscribe(
-          (result) => {
+      this.numberTransformerService.transformNumber(number).pipe(
+          tap((result) => {
             this.result = result;
-          },
-          (error) => {
+          }),
+          catchError((error) => {
             console.error(error);
             this.result = 'Error transforming number';
-          }
-      );
+            return of();
+          })
+      ).subscribe();
     }
   }
 }
